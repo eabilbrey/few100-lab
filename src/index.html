@@ -27,6 +27,8 @@
                     <label for="billTotal">$</label>
                     <input type="number"
                            id="bill"
+                           min="0"
+                           step=".01"
                            class="form-control">
                 </div>
                 <div class="row">
@@ -84,10 +86,14 @@
                                value="No">
                     </div>
                 </div>
+                <div id="showSplit">
                 <div class="form-group">
-                    <label for="billSplit">How many checks?</label>
+
                     <input type="number"
                            id="billSplit"
+                           min="2"
+                           step="1"
+                           placeholder="How many checks?"
                            class="form-control">
                 </div>
 
@@ -96,6 +102,7 @@
                     <p>Bill Total with Tip: $<span id="splitTotalToBePaid">(Total to be Paid)</span></p>
                     <h3>Total per Party: $<span id="totalPerParty">(Total per Party)</span></h3>
                 </div>
+            </div>
 
         </main>
     </div>

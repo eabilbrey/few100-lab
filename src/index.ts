@@ -17,8 +17,51 @@ const totalToBePaid = document.getElementById('totalToBePaid') as HTMLSpanElemen
 
 const splitYes = document.getElementById('yes') as HTMLInputElement;
 const splitNo = document.getElementById('no') as HTMLInputElement;
+const showSplit = document.getElementById('showSplit') as HTMLDivElement;
 
 const billSplit = document.getElementById('billSplit') as HTMLInputElement;
 const splitTotalToBePaid = document.getElementById('splitTotalToBePaid') as HTMLInputElement;
 const totalPerParty = document.getElementById('totalPerParty') as HTMLInputElement;
 
+
+// no Invalid Characters
+
+const invalidChar = ['+', '-', '=', 'e'];
+
+tipCustom.addEventListener('keydown', (typed) => {
+    if (invalidChar.includes(typed.key)) {
+        typed.preventDefault();
+    }
+});
+
+billAmount.addEventListener('keydown', (typed) => {
+    if (invalidChar.includes(typed.key)) {
+        typed.preventDefault();
+    }
+});
+
+billSplit.addEventListener('keydown', (typed) => {
+    if (invalidChar.includes(typed.key) || typed.key === '.') {
+        typed.preventDefault();
+    }
+});
+
+// Get Tip Value
+
+tip10.addEventListener('click', () => {
+    tip10Percent;
+}
+);
+// Calculate Tip function
+
+
+function calculateTip() {
+    const bill: number = billTotal.valueAsNumber;
+    if (!isNaN(bill) && bill !== undefined) {
+        bill = billTotal.valueAsNumber;
+    } else {
+        bill = 0;
+    }
+
+
+}
