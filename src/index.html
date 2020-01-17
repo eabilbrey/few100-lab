@@ -3,17 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Front End Web 100</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <title>Tip Calculator</title>
 </head>
 
-<body>
-    <header>
-        <h1>Front End Web 100 Starter</h1>
-        <h2>Progressive ITU</h2>
-    </header>
-    <main>
-        
-    </main>
+<body id="flexBox">
+    <div class="calcContainer">
+        <header class="spread">
+            <h1>Tip Calculator</h1>
+
+        </header>
+
+        <main class="container">
+            <div class="form-group">
+                <label for="billTotal"></label>
+                <input type="number"
+                       id="bill"
+                       class="form-control">
+            </div>
+            <div class="row">
+                <div class="button">
+                    <input type="button"
+                           class="tipPercentage"
+                           id="10"
+                           value="10%">
+                </div>
+                <div class="button">
+                    <input type="button"
+                           class="tipPercentage"
+                           id="15"
+                           value="15%">
+                </div>
+                <div class="button">
+                    <input type="button"
+                           class="tipPercentage"
+                           id="20"
+                           value="20%">
+                </div>
+                <p>You are tipping <span id="tipChoice">(choice here)</span>.</p>
+            </div>
+        </main>
+    </div>
 </body>
 
 </html>
