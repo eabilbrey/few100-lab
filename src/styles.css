@@ -25,9 +25,8 @@ h1 {
     padding: 10%;
     background-color: bisque;
 }
-
 .spread {
-    width: 50%; 
+    width: 100%; 
     background-color: grey; 
     justify-content: center;
 }
@@ -35,4 +34,10 @@ h1 {
 .row {
     display: flex;
     flex-direction: row; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    height: 1.5em; 
 }

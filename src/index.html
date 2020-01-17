@@ -7,6 +7,8 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
+    <link rel="stylesheet"
+          href="./styles.css">
     <title>Tip Calculator</title>
 </head>
 
@@ -18,33 +20,83 @@
         </header>
 
         <main class="container">
-            <div class="form-group">
-                <label for="billTotal"></label>
-                <input type="number"
-                       id="bill"
-                       class="form-control">
-            </div>
-            <div class="row">
-                <div class="button">
-                    <input type="button"
-                           class="tipPercentage"
-                           id="10"
-                           value="10%">
+
+            <div id="billForm">
+                <h2>Bill Amount:</h2>
+                <div class="form-group">
+                    <label for="billTotal">$</label>
+                    <input type="number"
+                           id="bill"
+                           class="form-control">
                 </div>
-                <div class="button">
-                    <input type="button"
-                           class="tipPercentage"
-                           id="15"
-                           value="15%">
-                </div>
-                <div class="button">
-                    <input type="button"
-                           class="tipPercentage"
-                           id="20"
-                           value="20%">
+                <div class="row">
+                    <div class="button">
+                        <input type="button"
+                               class="tipPercentage"
+                               id="tip10"
+                               value="10%">
+                    </div>
+                    <div class="button">
+                        <input type="button"
+                               class="tipPercentage"
+                               id="tip15"
+                               value="15%">
+                    </div>
+                    <div class="button">
+                        <input type="button"
+                               class="tipPercentage"
+                               id="tip20"
+                               value="20%">
+                    </div>
+                    <div class="form-group">
+                        <input type="number"
+                               id="tipCustom"
+                               placeholder="Custom Tip Percentage"
+                               class="form-control">
+                    </div>
                 </div>
                 <p>You are tipping <span id="tipChoice">(choice here)</span>.</p>
             </div>
+
+            <div id="billCalculations"
+                 class="calculations">
+                <p>Bill Amount: $<span id="billAmount">(Bill Amount)</span></p>
+                <p>Tip Percentage: <span id="tipPercentageChosen">(Tip Percentage)</span>%</p>
+                <p>Tip Amount: $<span id="tipAmount">(Tip Amount)</span></p>
+                <h3>Total to be Paid: $<span id="totalToBePaid">(Total to be Paid)</span></h3>
+            </div>
+            <div id="splitChoice"
+                 class="split">
+
+                <h2>Split the Bill:</h2>
+
+                <div class="row">
+                    <div class="button">
+                        <input type="button"
+                               class="answer"
+                               id="yes"
+                               value="Yes">
+                    </div>
+                    <div class="button">
+                        <input type="button"
+                               class="answer"
+                               id="no"
+                               value="No">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billSplit">How many checks?</label>
+                    <input type="number"
+                           id="billSplit"
+                           class="form-control">
+                </div>
+
+                <div id="splitCalculations"
+                     class="calculations">
+                    <p>Bill Total with Tip: $<span id="splitTotalToBePaid">(Total to be Paid)</span></p>
+                    <h3>Total per Party: $<span id="totalPerParty">(Total per Party)</span></h3>
+                </div>
+
         </main>
     </div>
 </body>
