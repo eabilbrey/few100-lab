@@ -48,14 +48,60 @@ billSplit.addEventListener('keydown', (typed) => {
 
 // Get Tip Value
 
-tip10.addEventListener('click', () => {
-    tip10Percent;
+tip10.addEventListener('click', (tip10Percent));
+
+
+function tip10Percent() {
+    const a = billTotal.valueAsNumber;
+    const b = .1;
+
+    const tenPercentTip = a * b;
+    tipAmount.innerText = tenPercentTip.toString();
+
 }
-);
+
+tip15.addEventListener('click', (tip15Percent));
+
+function tip15Percent() {
+    const a = billTotal.valueAsNumber;
+    const b = .15;
+
+    const fifteenPercentTip = a * b;
+    tipAmount.innerText = fifteenPercentTip.toString();
+
+}
+
+tip20.addEventListener('click', (tip20Percent));
+
+function tip20Percent() {
+    const a = billTotal.valueAsNumber;
+    const b = .20;
+
+    const twentyPercentTip = a * b;
+    tipAmount.innerText = twentyPercentTip.toString();
+
+}
+
+// NOT WORKING HALLLLP
+tipCustom.addEventListener('keydown', (tipCustomPercent));
+
+
+function tipCustomPercent() {
+    const a = billTotal.valueAsNumber;
+    const e = tipCustom.valueAsNumber;
+    const f = e;
+
+    console.log(f);
+
+    const customPercentTip = (a * f);
+    tipAmount.innerText = customPercentTip.toString();
+
+}
+
 // Calculate Tip function
 
 
-function calculateTip() {
+/*function calculateTip() {
     const bill: number = billTotal.valueAsNumber;
     if (!isNaN(bill) && bill !== undefined) {
         bill = billTotal.valueAsNumber;
@@ -64,4 +110,4 @@ function calculateTip() {
     }
 
 
-}
+}*/
