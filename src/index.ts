@@ -21,6 +21,7 @@ const showSplit = document.getElementById('showSplit') as HTMLDivElement;
 
 const billSplit = document.getElementById('billSplit') as HTMLInputElement;
 const splitTotalToBePaid = document.getElementById('splitTotalToBePaid') as HTMLInputElement;
+const tipPerParty = document.getElementById('tipPerParty') as HTMLSpanElement;
 const totalPerParty = document.getElementById('totalPerParty') as HTMLInputElement;
 
 
@@ -120,8 +121,10 @@ function calculateTip() {
 
 
     const splitTotal: number = (total / checks);
+    const splitTip: number = (tip / checks);
 
     splitTotalToBePaid.innerText = total.toFixed(2);
+    tipPerParty.innerText = splitTip.toFixed(2);
     totalPerParty.innerText = splitTotal.toFixed(2);
 
 
@@ -130,18 +133,19 @@ function calculateTip() {
 
 // Hide/Show Bill Split
 
-
+splitYes.addEventListener('click', () => { activateSplitBill(true); });
+splitNo.addEventListener('click', () => { activateSplitBill(false); });
 
 
 
 function activateSplitBill(status: boolean) {
     if (status === true) {
-        totalPerParty.hidden = false;
+        showSplit.hidden = false;
         splitYes.disabled = true;
         splitNo.disabled = false;
     } else {
-        totalPerParty.hidden = true;
-        splitNo.disabled = true;
+        showSplit.hidden = true;
+        splitNo.disabled = false;
     }
 }
 
