@@ -145,6 +145,7 @@ function activateSplitBill(status: boolean) {
         splitNo.disabled = false;
     } else {
         showSplit.hidden = true;
+        splitYes.disabled = false;
         splitNo.disabled = false;
     }
 }

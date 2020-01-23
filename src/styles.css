@@ -1,6 +1,7 @@
-h1 {
-    color:red;
-    text-align: center;
+/* BODY & CONTAINER STYLES */
+
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 #flexBox {
@@ -11,29 +12,137 @@ h1 {
     align-content: flex-start;
     justify-content: center;
     align-items: center;
-    margin-left: 10%; 
-    margin-right: 10%;
-    background-color: aqua;
+    margin-left: 20%; 
+    margin-right: 20%;
+    background-color: #800000;
 }
-
 
 .calcContainer {
     align-items: center; 
     align-content: flex-start; 
     justify-content: center; 
     width: 80%; 
-    padding: 10%;
-    background-color: bisque;
+    background-color: white;
+   
+}
+
+.container {
+    margin: 1em;
+    padding: 1.5em 2.5em 2.5em 2.5em; 
+    outline: 1pt solid #4d79ff;
+    outline-offset: -.5em;
+    background-color: #e6ffe6;
+
+}
+
+
+#billCalculations, #splitCalculations {
+    border-bottom: 1pt solid #cc0000; 
+}
+
+/* HEADER STYLING */
+
+header {
+    
+    align-items: center;
+    border-top: 1pt dashed grey;
+    margin-top: 1em; 
+
+}
+
+h1 {
+    color:#4d79ff;
+    text-align: center; 
+    font-size: 5em; 
+    font-family: 'Vidaloka', serif; 
+    margin-bottom: .1em; 
+}
+header > p {
+    color:#4d79ff;
+    text-align: center; 
+    font-family: 'Vidaloka', serif;
+    font-size: 1.5em; 
+    margin: 0 1em .1em 1em;
+    padding: .1em;
+    border: 1pt solid #4d79ff;
 }
 .spread {
     width: 100%; 
-    background-color: grey; 
+    background-color: white; 
     justify-content: center;
 }
 
+
+
+
+/* TEXT STYLES */
+
+
+h2 {
+    border-bottom: 1pt solid #4d79ff; 
+    font-weight: 800; 
+}
+
+p {
+    border-bottom: .5pt solid #4d79ff;
+    padding-bottom: .2em; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600; 
+}
+
+
+/* BUTTON STYLING */
+.button {
+    margin: .5em;
+}
+
+input[type=button] {
+    background-color: white; 
+    border: 1px solid grey;
+    padding: .5em; 
+    width: 4em; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border-radius: 5px; 
+    margin: 0 .1em .5em .1em; 
+}
+input[type=button]:disabled {
+    background-color: #f2f2f2; 
+}
+
+/* INPUT TYPE NUMBER STYLING */
+.form-group {
+    margin: 1em 0 1em 0; 
+    padding: .5em; 
+    border-bottom: .5pt solid #4d79ff;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+input[type=number] {
+    background-color: white; 
+    border: 1px solid grey;
+    padding: 1em; 
+    width: 100%; 
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border-radius: 5px; 
+    margin: 0 .1em .5em .1em; 
+}
+
+/* ALIGNMENT DIVS */
 .row {
     display: flex;
     flex-direction: row; 
+    border-bottom: .5pt solid #4d79ff;
+}
+
+.row > .form-group {
+    border: none; 
+    margin: 0; 
 }
 
 .form-group {
@@ -41,3 +150,6 @@ h1 {
     flex-direction: row;
     height: 1.5em; 
 }
+
+
+
