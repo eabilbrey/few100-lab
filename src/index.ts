@@ -46,7 +46,7 @@ billSplit.addEventListener('keydown', (typed) => {
     }
 });
 
-// Show Bill Amount
+// Show Bill Amount  and Calculate Tip
 
 
 
@@ -58,8 +58,6 @@ function showBillTotal() {
     billAmount.innerText = billAsNumber.toString();
 }
 
-// Get Tip Value
-
 
 let tipPercent: number;
 
@@ -68,7 +66,7 @@ tip15.addEventListener('click', () => { activateTip(15); });
 tip20.addEventListener('click', () => { activateTip(20); });
 tipCustom.addEventListener('input', () => { activateTip(tipCustom.valueAsNumber); });
 
-
+billSplit.addEventListener('input', calculateTip);
 
 function activateTip(amt: number) {
 
@@ -113,85 +111,39 @@ function calculateTip() {
     tipAmount.innerText = tip.toFixed(2);
     totalToBePaid.innerText = total.toFixed(2);
 
+    let checks: number = billSplit.valueAsNumber;
+    if (!isNaN(checks) && checks !== undefined) {
+        checks = billSplit.valueAsNumber;
+    } else {
+        checks = 1;
+    }
+
+
+    const splitTotal: number = (total / checks);
+
+    splitTotalToBePaid.innerText = total.toFixed(2);
+    totalPerParty.innerText = splitTotal.toFixed(2);
+
+
+}
+
+
+// Hide/Show Bill Split
+
+
+
+
+
+function activateSplitBill(status: boolean) {
+    if (status === true) {
+        totalPerParty.hidden = false;
+        splitYes.disabled = true;
+        splitNo.disabled = false;
+    } else {
+        totalPerParty.hidden = true;
+        splitNo.disabled = true;
+    }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*
-
-tip10.addEventListener('click', (tip10Percent));
-
-
-function tip10Percent() {
-    const a = billTotal.valueAsNumber;
-    const b = .1;
-
-    const tenPercentTip = a * b;
-    tipAmount.innerText = tenPercentTip.toString();
-    tipChoice.innerText = '10';
-    tipPercentageChosen.innerText = '10';
-
-}
-
-tip15.addEventListener('click', (tip15Percent));
-
-function tip15Percent() {
-    const a = billTotal.valueAsNumber;
-    const b = .15;
-
-    const fifteenPercentTip = a * b;
-    tipAmount.innerText = fifteenPercentTip.toString();
-    tipChoice.innerText = '15';
-    tipPercentageChosen.innerText = '15';
-
-}
-
-tip20.addEventListener('click', (tip20Percent));
-
-function tip20Percent() {
-    const a = billTotal.valueAsNumber;
-    const b = .20;
-
-    const twentyPercentTip = a * b;
-    tipAmount.innerText = twentyPercentTip.toString();
-    tipChoice.innerText = '20';
-    tipPercentageChosen.innerText = '20';
-
-}
-
-tipCustom.addEventListener('keyup', (tipCustomPercent));
-
-
-function tipCustomPercent() {
-    const a = billTotal.valueAsNumber;
-    const e = tipCustom.valueAsNumber;
-    const f = e * .01;
-
-    const customPercentTip = (a * f);
-
-
-    tipAmount.innerText = customPercentTip.toString();
-    tipChoice.innerText = tipCustom.toString();
-    tipPercentageChosen.innerText = tipCustom.toString();
-
-}
-
-// Calculate Bill Total
-
-function calculateBillTotal() {
-
-    const a = billTotal.valueAsNumber;
-    const b =
-}
-// Split Bill
-*/
